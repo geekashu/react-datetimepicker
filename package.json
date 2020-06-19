@@ -1,6 +1,7 @@
 {
-  "name": "react-advanced-datetimerange-picker",
-  "version": "1.0.11",
+  "name": "@kim-wing-fung/react-advanced-datetimerange-picker",
+  "description": "Date time range picker",
+  "version": "1.0.12",
   "license": "GNU",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -10,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/v0ltoz/react-datetimepicker"
+    "url": "https://github.com/kim-wing-fung/react-datetimepicker"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -23,11 +24,9 @@
     ]
   },
   "dependencies": {
-    "moment": "^2.22.2",
-    "prop-types": "^15.6.2",
-    "react-bootstrap": "^0.31.3",
-    "react-dot-fragment": "^0.2.7",
-    "react-moment-proptypes": "^1.6.0"
+    "moment": "^2.26.0",
+    "prop-types": "^15.7.2",
+    "react-moment-proptypes": "^1.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,27 +43,26 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "cypress": "^3.4.1",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-15": "^1.1.1",
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-config-airbnb-base": "13.1.0",
-    "eslint-config-prettier": "3.1.0",
-    "eslint-import-resolver-webpack": "0.10.1",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "6.1.2",
-    "eslint-plugin-prettier": "3.0.0",
-    "eslint-plugin-react": "^7.11.1",
-    "prettier": "1.14.3",
-    "react": "15.6.2",
-    "react-dom": "15.6.2",
-    "react-scripts": "^3.0.0",
-    "react-test-renderer": "^15.6.2"
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "cypress": "^4.8.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-webpack": "^0.12.2",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "react-test-renderer": "^16.13.1"
   }
 }

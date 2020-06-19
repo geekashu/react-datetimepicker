@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import moment from 'moment';
-import { FormControl } from 'react-bootstrap';
 import DateTimeRangeContainer from '../../DateTimeRangeContainer';
 
 configure({ adapter: new Adapter() });
@@ -44,7 +43,7 @@ const dateTimeRangeContainerExpectedUse = mount(
     local={local}
     applyCallback={applyCallback}
   >
-    <FormControl
+    <input
       id="formControlsTextB"
       type="text"
       label="Text"
@@ -73,7 +72,6 @@ describe('DateTimeRangeContainer', () => {
       .first()
       .children()
       .children();
-    // console.log(wrappingDiv.debug());
     expect(wrappingDiv.length).toBeGreaterThan(1);
   });
 

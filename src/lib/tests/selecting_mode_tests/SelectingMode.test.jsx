@@ -1,8 +1,7 @@
 import { configure, mount } from 'enzyme/build';
-import { FormControl } from 'react-bootstrap';
 import React from 'react';
 import moment from 'moment';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import DateTimeRangeContainer from '../../DateTimeRangeContainer';
 import ActiveNotifier from '../../date_picker/ActiveNotifier';
 import Cell from '../../calendar/Cell';
@@ -44,7 +43,7 @@ const dateTimeRangeContainerSmartMode = mount(
     applyCallback={applyCallback}
     smartMode
   >
-    <FormControl
+    <input
       id="formControlsTextB"
       type="text"
       label="Text"
@@ -61,7 +60,7 @@ const dateTimeRangeContainer = mount(
     local={local}
     applyCallback={applyCallback}
   >
-    <FormControl
+    <input
       id="formControlsTextB"
       type="text"
       label="Text"

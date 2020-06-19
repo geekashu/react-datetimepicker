@@ -1,6 +1,4 @@
 import React from 'react';
-import '../style/DateTimeRange.css';
-import { Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
 import { generateHours, generateMinutes } from '../utils/TimeFunctionUtils';
@@ -89,7 +87,6 @@ class TimeField extends React.Component {
   }
 
   render() {
-    let glyphColor = this.props.darkMode ? '#FFFFFF' : '#555';
     let hours = this.generateHourSelectValues();
     let minutes = this.generateMinuteSelectValues();
     let hour = this.props.date.hour();
@@ -120,7 +117,6 @@ class TimeField extends React.Component {
             {this.renderSelectField(minute, this.handleMinuteChange, minutes, 'Minutes')}
           </div>
         </div>
-        <Glyphicon style={{color: glyphColor}} className="timeIconStyle" glyph="time" />
       </div>
     );
   }

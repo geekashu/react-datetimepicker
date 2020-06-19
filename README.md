@@ -35,15 +35,9 @@ searching. Use pastSearchFriendly to optimise for past searching.
 ## Setup
 Run the following command:
 ```bash
-npm install react-advanced-datetimerange-picker
+npm install @kim-wing-fung/react-advanced-datetimerange-picker
 ```
 
-## Requirements
-
-This component is best used alongside bootstrap e.g. the below line of code in index.html
-```js
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-```
 ## General Info
 
 This project is based upon dangrossman daterangepicker (https://github.com/dangrossman/daterangepicker)
@@ -203,7 +197,6 @@ When set and changed the picker will open to the left (right to left) instead of
 ```js
 import React from 'react';
 import DateTimeRangeContainer from 'react-advanced-datetimerange-picker'
-import {FormControl} from 'react-bootstrap'
 import moment from "moment"
 
 class Wrapper extends React.Component {
@@ -253,7 +246,7 @@ class Wrapper extends React.Component {
                         maxDate={maxDate}
                         applyCallback={this.applyCallback}
                     >    
-                        <FormControl
+                        <input
                         id="formControlsTextB"
                         type="text"
                         label="Text"
