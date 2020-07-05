@@ -1,6 +1,4 @@
 import React from 'react';
-import '../style/DateTimeRange.css';
-import { Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import {addFocusStyle, darkTheme, lightTheme} from '../utils/StyleUtils';
 
@@ -48,13 +46,12 @@ class MonthYearSelector extends React.Component {
     });
   }
 
-  createGlyph(icon, onClickHandler, previous, next) {
+  createNavigator(label, onClickHandler, previous, next) {
     return (
-      <Glyphicon
-        glyph={icon}
+      <div
         style={{ cursor: 'pointer' }}
         onClick={() => onClickHandler(previous, next)}
-      />
+      ><span>{label}</span></div>
     );
   }
 
@@ -62,14 +59,14 @@ class MonthYearSelector extends React.Component {
     let months = this.createCalendarMonths(this.props.months);
     let years = this.createYears(this.props.years);
     let theme = this.props.darkMode ? darkTheme : lightTheme;
-    let leftArrow = this.createGlyph(
-      'chevron-left',
+    let leftArrow = this.createNavigator(
+      '<',
       this.props.changeMonthArrowsCallback,
       true,
       false,
     );
-    let rightArrow = this.createGlyph(
-      'chevron-right',
+    let rightArrow = this.createNavigator(
+      '>',
       this.props.changeMonthArrowsCallback,
       false,
       true,

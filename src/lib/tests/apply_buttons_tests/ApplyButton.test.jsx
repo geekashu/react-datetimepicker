@@ -1,13 +1,11 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import moment from 'moment';
-import { FormControl } from 'react-bootstrap';
 import DateTimeRangeContainer from '../../DateTimeRangeContainer';
 import ApplyCancelButtons from '../../date_picker/ApplyCancelButtons';
 import RangeButton from '../../ranges/RangeButton';
 import Cell from '../../calendar/Cell';
-import MonthYearSelector from '../../calendar/MonthYearSelector';
 import TimeField from '../../date_picker/TimeField';
 import DateField from '../../date_picker/DateField';
 import { DateTimeRangePicker, momentFormat } from '../../DateTimeRangePicker';
@@ -52,7 +50,7 @@ const dateTimeRangeContainer = mount(
     local={local}
     applyCallback={applyCallback}
   >
-    <FormControl
+    <input
       id="formControlsTextB"
       type="text"
       label="Text"
@@ -69,7 +67,7 @@ let dateTimeRangeContainerAutoApply = mount(
     applyCallback={applyCallback}
     autoApply
   >
-    <FormControl
+    <input
       id="formControlsTextB"
       type="text"
       label="Text"
@@ -89,7 +87,7 @@ let dateTimeRangeContainerSmartModeAutoApply = mount(
     smartMode
     pastSearchFriendly
   >
-    <FormControl
+    <input
       id="formControlsTextB"
       type="text"
       label="Text"
@@ -243,7 +241,7 @@ describe('Apply Button Tests Non Auto Apply', () => {
     let minuteTimeSelector = dateTimeRangeContainer
       .find(DateField)
       .first()
-      .find(FormControl)
+      .find('input')
       .first();
     minuteTimeSelector.simulate('focus');
     minuteTimeSelector.simulate('change', {
@@ -254,7 +252,7 @@ describe('Apply Button Tests Non Auto Apply', () => {
     minuteTimeSelector = dateTimeRangeContainer
       .find(DateField)
       .first()
-      .find(FormControl)
+      .find('input')
       .first();
     expect(minuteTimeSelector.props().value).toEqual('05-07-2016 23:58');
     let picker = dateTimeRangeContainer.find(DateTimeRangePicker);
@@ -285,7 +283,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
         applyCallback={applyCallback}
         autoApply
       >
-        <FormControl
+        <input
           id="formControlsTextB"
           type="text"
           label="Text"
@@ -304,7 +302,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
         autoApply
         smartMode
       >
-        <FormControl
+        <input
           id="formControlsTextB"
           type="text"
           label="Text"
@@ -469,7 +467,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
     let dateFieldForm = dateTimeRangeContainerAutoApply
       .find(DateField)
       .first()
-      .find(FormControl)
+      .find('input')
       .first();
     dateFieldForm.simulate('focus');
     dateFieldForm.simulate('change', {
@@ -480,7 +478,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
     dateFieldForm = dateTimeRangeContainerAutoApply
       .find(DateField)
       .first()
-      .find(FormControl)
+      .find('input')
       .first();
     expect(dateFieldForm.props().value).toEqual('05-07-2016 23:58');
     let picker = dateTimeRangeContainerAutoApply.find(DateTimeRangePicker);
@@ -498,7 +496,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
     let dateFieldForm = dateTimeRangeContainerSmartModeAutoApply
       .find(DateField)
       .first()
-      .find(FormControl)
+      .find('input')
       .first();
     dateFieldForm.simulate('focus');
     dateFieldForm.simulate('change', {
@@ -509,7 +507,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
     dateFieldForm = dateTimeRangeContainerSmartModeAutoApply
       .find(DateField)
       .first()
-      .find(FormControl)
+      .find('input')
       .first();
     expect(dateFieldForm.props().value).toEqual(newStartDateString);
     let picker = dateTimeRangeContainerSmartModeAutoApply.find(DateTimeRangePicker);
@@ -532,7 +530,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
     let dateFieldForm = dateTimeRangeContainerAutoApply
       .find(DateField)
       .first()
-      .find(FormControl)
+      .find('input')
       .first();
     dateFieldForm.simulate('focus');
     dateFieldForm.simulate('change', {
@@ -543,7 +541,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
     dateFieldForm = dateTimeRangeContainerAutoApply
       .find(DateField)
       .first()
-      .find(FormControl)
+      .find('input')
       .first();
     expect(dateFieldForm.props().value).toEqual(startDateString);
     let picker = dateTimeRangeContainerAutoApply.find(DateTimeRangePicker);
@@ -557,7 +555,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
     let dateFieldForm = dateTimeRangeContainerSmartModeAutoApply
       .find(DateField)
       .last()
-      .find(FormControl)
+      .find('input')
       .first();
     dateFieldForm.simulate('focus');
     dateFieldForm.simulate('change', {
@@ -568,7 +566,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
     dateFieldForm = dateTimeRangeContainerSmartModeAutoApply
       .find(DateField)
       .last()
-      .find(FormControl)
+      .find('input')
       .first();
     expect(dateFieldForm.props().value).toEqual('05-07-2016 23:58');
     let picker = dateTimeRangeContainerSmartModeAutoApply.find(DateTimeRangePicker);
@@ -588,7 +586,7 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
     let dateFieldForm = dateTimeRangeContainerAutoApply
       .find(DateField)
       .last()
-      .find(FormControl)
+      .find('input')
       .first();
     dateFieldForm.simulate('focus');
     dateFieldForm.simulate('change', {
@@ -599,13 +597,12 @@ describe('Apply Button Tests Auto Apply Parameter', () => {
     dateFieldForm = dateTimeRangeContainerAutoApply
       .find(DateField)
       .last()
-      .find(FormControl)
+      .find('input')
       .first();
     expect(dateFieldForm.props().value).toEqual(endDateString);
 
     let picker = dateTimeRangeContainerAutoApply.find(DateTimeRangePicker);
     expect(picker.state().endLabel).toEqual(endDateString);
-    let newDate = moment(endDateString, momentFormat);
     expect(picker.state().end).toEqual(moment(end));
     expect(startDateCallback).toEqual('');
     expect(endDateCallback).toEqual('');

@@ -1,8 +1,6 @@
 import React from 'react';
-import '../style/DateTimeRange.css';
 import PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
-import Fragment from 'react-dot-fragment';
 import { addFocusStyle } from '../utils/StyleUtils';
 
 class ApplyCancelButtons extends React.Component {
@@ -166,10 +164,10 @@ class ApplyCancelButtons extends React.Component {
       closeButtonText,
     );
     return (
-      <Fragment>
+      <>
         {applyButton}
         {!this.props.standalone ? closeButton : null}
-      </Fragment>
+      </>
     );
   }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import moment from 'moment';
 import Calendar from '../../calendar/Calendar';
 import { ModeEnum } from '../../DateTimeRangePicker';

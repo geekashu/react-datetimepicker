@@ -1,6 +1,5 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom';
-import './style/DateTimeRange.css';
 import PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
 import { DateTimeRangePicker } from './DateTimeRangePicker';

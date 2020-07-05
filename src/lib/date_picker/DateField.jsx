@@ -1,6 +1,4 @@
 import React from 'react';
-import '../style/DateTimeRange.css';
-import { InputGroup, FormControl, Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import {darkTheme, lightTheme} from "../utils/StyleUtils";
 
@@ -33,14 +31,10 @@ class DateField extends React.Component {
   }
 
   render() {
-    let glyphColor = this.props.darkMode ? '#FFFFFF' : '#555';
     let theme = this.props.darkMode ? darkTheme : lightTheme;
     return (
-      <InputGroup onClick={this.onClick} style={{ cursor: 'pointer' }}>
-        <InputGroup.Addon className="calendarAddon">
-          <Glyphicon style={{color: glyphColor}} glyph="calendar" />
-        </InputGroup.Addon>
-        <FormControl
+      <div onClick={this.onClick} style={{ cursor: 'pointer' }}>
+        <input
           className="inputDate"
           id={"DateTimeInput_" + this.props.mode}
           style={theme}
@@ -49,7 +43,7 @@ class DateField extends React.Component {
           onChange={this.onChangeDateTextHandler}
           onBlur={this.onBlur}
         />
-      </InputGroup>
+      </div>
     );
   }
 }

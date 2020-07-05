@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import moment from 'moment';
-import { FormControl } from 'react-bootstrap';
 import Calendar from '../../calendar/Calendar';
 import { ModeEnum } from '../../DateTimeRangePicker';
 import { createYears } from '../../utils/YearUtils';
@@ -87,7 +86,7 @@ const dateTimeRangeContainer = mount(
     local={local}
     applyCallback={applyCallback}
   >
-    <FormControl
+    <input
       id="formControlsTextB"
       type="text"
       label="Text"
@@ -105,7 +104,7 @@ const dateTimeRangeContainerDescendingYears = mount(
     applyCallback={applyCallback}
     descendingYears
   >
-    <FormControl
+    <input
       id="formControlsTextB"
       type="text"
       label="Text"
@@ -125,7 +124,7 @@ const dateTimeRangeContainerCustomYears = mount(
     applyCallback={applyCallback}
     years={customYears}
   >
-    <FormControl
+    <input
       id="formControlsTextB"
       type="text"
       label="Text"
@@ -144,7 +143,7 @@ const dateTimeRangeContainerCustomDescendingYears = mount(
     descendingYears
     years={customYears}
   >
-    <FormControl
+    <input
       id="formControlsTextB"
       type="text"
       label="Text"

@@ -1,6 +1,4 @@
 import React from 'react';
-import './style/DateTimeRange.css';
-import Fragment from 'react-dot-fragment';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
@@ -479,7 +477,7 @@ class DateTimeRangePicker extends React.Component {
 
   render() {
     return (
-      <Fragment>
+      <>
         <Ranges
           ranges={this.state.ranges}
           selectedRange={this.state.selectedRange}
@@ -491,7 +489,7 @@ class DateTimeRangePicker extends React.Component {
         />
         {this.renderStartDate(this.props.local)}
         {this.renderEndDate(this.props.local)}
-      </Fragment>
+      </>
     );
   }
 }
